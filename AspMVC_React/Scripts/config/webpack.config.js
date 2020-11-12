@@ -2,7 +2,7 @@
 
 module.exports = {
   entry: {
-    index: ["./Scripts/src/index.js"],
+    index: ["./Scripts/src/index.js", "./Scripts/src/Style/main.css"],
   },
 
   output: {
@@ -17,10 +17,12 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
-
         test: /\.js$/,
-
         exclude: /node_modules/, //excludes node_modules folder from being transpiled by babel. We do this because it's a waste of resources to do so.
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },

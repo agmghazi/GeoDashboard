@@ -9,8 +9,8 @@ export default function App() {
         <div>
           <WebMapView />
         </div>
-              <div>
-                  <h1 className="addH1">data here</h1>
+        <div>
+          <h1 className="addH1">data here</h1>
         </div>
       </SplitPane>
     </div>
