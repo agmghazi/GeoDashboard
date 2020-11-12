@@ -190,6 +190,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="package.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\config\webpack.config.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -203,6 +204,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\src\Component\App.js" />
+    <Content Include="Scripts\src\Component\WebMapView.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

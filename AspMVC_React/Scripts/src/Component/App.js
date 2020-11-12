@@ -1,8 +1,18 @@
-﻿
-import React from "react";
+﻿import React from "react";
+import SplitPane, { Pane } from "react-split-pane";
+import WebMapView from "./WebMapView";
 
 export default function App() {
-    return <div>
-        <h1>hi from app.js </h1>
-    </div>;
+  return (
+    <div>
+      <SplitPane split="vertical">
+        <div>
+          <WebMapView />
+        </div>
+              <div>
+                  <h1 className="addH1">data here</h1>
+        </div>
+      </SplitPane>
+    </div>
+  );
 }
