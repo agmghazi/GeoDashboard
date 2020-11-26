@@ -1,0 +1,32 @@
+
+.searchResult {
+    display: none;
+    width: 247px;
+    height: 27rem;
+    right: 0;
+   overflow: auto;
+    color: black;
+    top: 100px;
+    right: 96px;
+    margin-top: 10px;
+    text-align:center;
+  }
+  .divCo{
+    height: 2rem;
+    display: none;
+    width: 244px;
+    right: 0; 
+   overflow: auto;
+    color: black;
+    top: 46px;
+    right: 96px;
+    margin-top: 10px;
+background-color: white;
+ text-align:center; 
+ font-weight: bold;
+  }
+
+  .myinput{
+      width: 244px;
+      min-height: 35px;
+  }

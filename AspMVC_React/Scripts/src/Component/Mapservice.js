@@ -77,11 +77,12 @@ const Mapservice = () => {
         window._map.add(featureOne);
         window._map.add(MapImage);
 
+        window._areaZone = featureOne;
         window._view.on("click", function (event) {
           window._view.hitTest(event).then(function (response) {
             if (response.results.length) {
               let layerName = response.results[0].graphic.attributes.NAME_A;
-              console.log("layerName", layerName);
+              // console.log("layerName", layerName);
               dispatch(dataUpdate({ name: layerName }));
             }
           });

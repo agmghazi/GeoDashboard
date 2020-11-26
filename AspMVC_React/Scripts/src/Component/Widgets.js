@@ -140,7 +140,7 @@ const Widgets = () => {
           },
           {
             component: basemapToggle,
-            position: "top-right",
+            position: "bottom-right",
             index: 0,
           },
         ]);
