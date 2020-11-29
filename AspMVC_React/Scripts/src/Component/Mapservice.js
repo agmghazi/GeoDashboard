@@ -25,7 +25,7 @@ const Mapservice = () => {
         graphic = feature.graphic;
         attributes = graphic.attributes;
 
-        content = `<h4 class="SubBuildTitle"  dir = "rtl" > إسم المنطقة:  ${attributes.NAME_A}</h4>`;
+        content = `<h5 class="SubBuildTitle"  dir = "rtl" > إسم المنطقة:  ${attributes.NAME_A}</h5>`;
         return content;
       }
 

@@ -1,4 +1,6 @@
-﻿
+﻿html, body {
+    font-family: "Avenir Next", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {

@@ -1,0 +1,23 @@
+.popupTableInfo {
+  border-collapse: collapse;
+  width: 100%;
+  direction: rtl;
+}
+
+.popupTableInfo td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+
+.popupTableInfo tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.popupTableInfo tr:hover {
+  background-color: #ddd;
+}
+
+.SubBuildTitle {
+  display: flex;
+}

@@ -21,9 +21,13 @@
     "webpack-cli": "^4.1.0"
   },
   "dependencies": {
+    "@esri/arcgis-rest-feature-layer": "^2.22.0",
+    "@esri/arcgis-rest-request": "^2.22.0",
+    "@esri/cedar": "^1.0.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@reduxjs/toolkit": "^1.4.0",
+    "amcharts3": "^3.21.15",
     "esri-loader": "^2.16.0",
     "react-redux": "^7.2.2",
     "react-split-pane": "^2.0.3"
