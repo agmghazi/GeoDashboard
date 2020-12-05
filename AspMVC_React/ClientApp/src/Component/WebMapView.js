@@ -54,7 +54,7 @@ const WebMapView = () => {
           if (response.data.features.length <= 1) {
             console.log(response.data.features[0].attributes.NAME_A);
             let layerName = response.data.features[0].attributes.NAME_A;
-            dispatch(dataUpdate({ name: layerName }));
+              dispatch(dataUpdate({ layerName: layerName }));
           }
         });
       }

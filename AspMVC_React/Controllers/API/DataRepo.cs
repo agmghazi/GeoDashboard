@@ -1,17 +1,12 @@
 ﻿using DataModels;
 using DataModels.AwModels;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Script.Serialization;
 
-namespace AspMVC_React.Controllers.API 
+namespace AspMVC_React.Controllers.API
 {
     public class DataRepoController : ApiController
     {
@@ -20,10 +15,10 @@ namespace AspMVC_React.Controllers.API
 
         public IHttpActionResult Get(int locationId, string locationType)
         {
-          
-            var result = GetDataSetExternalConnection ("Data Source=10.80.60.193;Initial Catalog=PrioritiesDB_Barrom;User ID=awlwiatapp;Password=app1234;", "GetCityPopSumByReg " , "GetCityPopSumByReg", new SqlParameter("@reg", locationId));
 
-            List <KeyValModel> lKyVl = new List<KeyValModel>();
+            var result = GetDataSetExternalConnection("Data Source=10.80.60.193;Initial Catalog=PrioritiesDB_Barrom;User ID=awlwiatapp;Password=app1234;", "GetCityPopSumByReg ", "GetCityPopSumByReg", new SqlParameter("@reg", locationId));
+
+            List<KeyValModel> lKyVl = new List<KeyValModel>();
             foreach (DataColumn item in result.Tables["GetCityPopSumByReg"].Columns)
             {
                 lKyVl.Add(new KeyValModel { key = item.ColumnName, value = result.Tables["GetCityPopSumByReg"].Rows[0][item.ColumnName].ToString() });
@@ -31,7 +26,7 @@ namespace AspMVC_React.Controllers.API
 
             var jResult = new JavaScriptSerializer().Serialize(lKyVl);
 
-            return Ok( jResult);
+            return Ok(jResult);
         }
 
         // GET api/<controller>/5

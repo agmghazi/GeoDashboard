@@ -196,6 +196,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\src\Component\Charts.js" />
+    <Content Include="ClientApp\src\Component\Form\Cards.js" />
+    <Content Include="ClientApp\src\Component\GetDataFromMap.js" />
+    <Content Include="ClientApp\src\Component\MapSearch.js" />
+    <Content Include="ClientApp\src\Component\Mapservice.js" />
+    <Content Include="ClientApp\src\Component\Widgets.js" />
+    <Content Include="ClientApp\src\Store\api.js" />
+    <Content Include="ClientApp\src\Store\middleware\api.js" />
+    <Content Include="ClientApp\src\Store\middleware\logger.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -207,9 +216,9 @@
     <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="package.json" />
+    <Content Include="ClientApp\package.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\config\webpack.config.js" />
+    <Content Include="ClientApp\config\webpack.config.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -220,9 +229,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\src\Component\App.js" />
-    <Content Include="Scripts\src\Component\WebMapView.js" />
-    <Content Include="Scripts\src\index.js" />
+    <Content Include="ClientApp\src\Component\App.js" />
+    <Content Include="ClientApp\src\Component\WebMapView.js" />
+    <Content Include="ClientApp\src\index.js" />
+    <Content Include="ClientApp\src\Store\configurationStore.js" />
+    <Content Include="ClientApp\src\Store\entities.js" />
+    <Content Include="ClientApp\src\Store\mapService.js" />
+    <Content Include="ClientApp\src\Store\reducer.js" />
+    <Content Include="ClientApp\src\Style\main.css" />
+    <Content Include="ClientApp\src\Style\MapSearch.css" />
+    <Content Include="ClientApp\src\Style\Mapservice.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -313,6 +329,13 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
   </Target>
   <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
     <ItemGroup>
