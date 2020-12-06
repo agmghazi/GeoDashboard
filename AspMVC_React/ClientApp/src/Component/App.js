@@ -29,7 +29,6 @@ export default function App() {
         </div>
         <div>
           <GetDataFromMap />
-          <Charts />
         </div>
       </SplitPane>
     </div>

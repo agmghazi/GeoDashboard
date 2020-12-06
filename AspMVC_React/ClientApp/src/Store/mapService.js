@@ -13,7 +13,8 @@ const slice = createSlice({
     },
     reducers: {
         dataReceived: (name, action) => {
-            name.list.push(action.payload);
+            //            name.list.push(action.payload);
+            name.list[0] = action.payload;
         },
         dataUpdate: (name, action) => {
             name.layerName = action.payload.layerName;
@@ -32,11 +33,11 @@ export const loadBugs = (locationId, locationType) => (dispatch, getState) => {
     //    console.log("getState 1");
     getState();
     //    console.log(getState());
-    const { lastFeatch } = getState().entities.mapService;
-    //    console.log("lastFeatch   " + lastFeatch);
-
-    const diffInMinutes = moment().diff(moment(lastFeatch), "minutes");
-    if (diffInMinutes < 10) return;
+    //    const { lastFeatch } = getState().entities.mapService;
+    //    //    console.log("lastFeatch   " + lastFeatch);
+    //
+    //    const diffInMinutes = moment().diff(moment(lastFeatch), "minutes");
+    //    if (diffInMinutes < 10) return;
     //    console.log("diffInMinutes" + diffInMinutes);
 
     dispatch(
@@ -45,9 +46,9 @@ export const loadBugs = (locationId, locationType) => (dispatch, getState) => {
             onSuccess: dataReceived.type,
         })
     );
-    //    console.log("getState 2");
+    console.log("getState 2");
     getState();
-    //    console.log(getState());
+    console.log(getState());
 };
 
 //Action Post
@@ -59,7 +60,7 @@ export const loadBugs = (locationId, locationType) => (dispatch, getState) => {
 //     onSuccess: bugAdded.type,
 //   });
 //selector
-export const getUnresolvedBugs = createSelector(
-    (state) => state.entities.mapService
-    // (mapService, projects) => mapService.list.filter((mapService) => !bug.resolved)
-);
+//export const getUnresolvedBugs = createSelector(
+//    (state) => state.entities.mapService
+//    (mapService, projects) => mapService.list.filter((mapService) => !bug.resolved)
+//);

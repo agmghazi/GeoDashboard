@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { loadModules } from "esri-loader";
-import { dataUpdate } from "../Store/mapService";
+import { dataUpdate, loadBugs } from "../Store/mapService";
 import { useDispatch } from "react-redux";
-import { loadBugs } from "../Store/mapService";
 
 
 const Mapservice = () => {
